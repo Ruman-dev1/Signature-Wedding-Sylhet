@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact — Signature Wedding Sylhet</title>
+  <meta name="description" content="Get in touch with Signature Wedding Sylhet via WhatsApp. Planning your wedding in Sylhet? We would love to hear from you.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="logo" href="index.html">Signature<span> Wedding</span></a>
+      <nav>
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="gallery.html">Gallery</a></li>
+          <li><a href="packages.html">Packages</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="stories.html">Stories</a></li>
+          <li><a href="contact.html" class="active">Contact</a></li>
+        </ul>
+      </nav>
+      <div class="header-cta">
+        <a class="btn btn-gold" href="contact.html">Book a Shoot</a>
+        <button class="nav-toggle" aria-label="Menu">&#9776;</button>
+      </div>
+    </div>
+  </header>
+
+  <section class="section">
+    <div class="section-head reveal">
+      <p class="eyebrow">Get in Touch</p>
+      <h2>Let's Plan Your Day</h2>
+      <p>Send us a message and we will reply on WhatsApp, usually within a few hours.</p>
+    </div>
+
+    <div class="contact-grid">
+      <div class="contact-info reveal">
+        <h3>Contact Information</h3>
+        <p>Location: <a href="contact.html">Sylhet, Bangladesh</a></p>
+        <p>WhatsApp: <a href="https://wa.me/8801712345678" target="_blank" rel="noopener">+880 1712-345678</a></p>
+        <p>Email: <a href="mailto:hello@signaturewedding.com">hello@signaturewedding.com</a></p>
+        <p>Hours: Daily, 10:00 AM - 9:00 PM</p>
+        <div class="footer-socials" style="justify-content:flex-start;padding:0;">
+          <a href="https://www.instagram.com/" target="_blank" rel="noopener">Instagram</a>
+          <a href="https://www.facebook.com/" target="_blank" rel="noopener">Facebook</a>
+          <a href="https://www.youtube.com/" target="_blank" rel="noopener">YouTube</a>
+        </div>
+      </div>
+
+      <form class="reveal" id="contact-form">
+        <div class="form-group">
+          <label for="name">Your Name</label>
+          <input type="text" id="name" name="name" required>
+        </div>
+        <div class="form-group">
+          <label for="event">Event Type</label>
+          <select id="event" name="event">
+            <option value="Wedding">Wedding</option>
+            <option value="Engagement">Engagement</option>
+            <option value="Pre-wedding">Pre-wedding</option>
+            <option value="Event">Event</option>
+            <option value="Other">Other</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="date">Event Date (if planned)</label>
+          <input type="date" id="date" name="date">
+        </div>
+        <div class="form-group">
+          <label for="message">Message</label>
+          <textarea id="message" name="message" placeholder="Tell us about your wedding plans..."></textarea>
+        </div>
+        <button type="submit" class="btn btn-gold">Send via WhatsApp</button>
+      </form>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <a class="logo" href="index.html">Signature<span> Wedding</span></a>
+    <div class="footer-socials">
+      <a href="https://www.instagram.com/" target="_blank" rel="noopener">Instagram</a>
+      <a href="https://www.facebook.com/" target="_blank" rel="noopener">Facebook</a>
+      <a href="https://www.youtube.com/" target="_blank" rel="noopener">YouTube</a>
+    </div>
+    <p>Sylhet, Bangladesh &nbsp;|&nbsp; <a href="contact.html">Contact Us</a></p>
+    <p>&copy; <span id="year"></span> Signature Wedding Sylhet. All rights reserved.</p>
+  </footer>
+
+  <a class="whatsapp-float" href="https://wa.me/8801712345678?text=Hello%20Signature%20Wedding%2C%20I%27d%20like%20to%20inquire%20about%20your%20services." target="_blank" rel="noopener" aria-label="Chat on WhatsApp">&#9990;</a>
+
+  <script src="js/main.js"></script>
+  <script>
+    document.getElementById('contact-form').addEventListener('submit', function (e) {
+      e.preventDefault();
+      var name = document.getElementById('name').value;
+      var event = document.getElementById('event').value;
+      var date = document.getElementById('date').value;
+      var message = document.getElementById('message').value;
+      var text = 'Hello Signature Wedding, I am ' + name + '. I am interested in ' + event +
+        ' coverage' + (date ? ' on ' + date : '') + '. ' + message;
+      window.open(waLink(text), '_blank');
+    });
+  </script>
+</body>
+</html>
