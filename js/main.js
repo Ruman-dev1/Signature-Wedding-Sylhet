@@ -1,4 +1,4 @@
-const WHATSAPP_NUMBER = '8801712345678';
+const WHATSAPP_NUMBER = '8801787341058';
 
 function waLink(message) {
   return 'https://wa.me/' + WHATSAPP_NUMBER + '?text=' + encodeURIComponent(message);
