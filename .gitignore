@@ -1,0 +1,7 @@
+node_modules/
+server/site.db
+server/site.db-shm
+server/site.db-wal
+server/config.json
+public/uploads/
+*.log
