@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard — Signature Wedding Admin</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="admin.css">
+</head>
+<body>
+  <aside class="sidebar">
+    <div class="sidebar-brand">
+      <a href="../index.html" class="logo">Signature<span> Wedding</span></a>
+      <p class="sidebar-sub">Admin Panel</p>
+    </div>
+    <nav class="sidebar-nav" id="sidebar-nav"></nav>
+    <div class="sidebar-foot">
+      <a href="../index.html">View Site</a>
+      <button id="logout-btn" class="link-btn">Logout</button>
+    </div>
+  </aside>
+
+  <main class="main">
+    <header class="main-head">
+      <h2 id="section-title">Dashboard</h2>
+      <button id="add-btn" class="btn btn-gold" hidden>Add New</button>
+    </header>
+
+    <div id="notice" class="notice" hidden></div>
+
+    <section id="items-view" class="items-view"></section>
+    <section id="settings-view" class="settings-view" hidden></section>
+    <section id="password-view" class="settings-view" hidden></section>
+  </main>
+
+  <div id="modal-backdrop" class="modal-backdrop" hidden>
+    <div class="modal">
+      <div class="modal-head">
+        <h3 id="modal-title"></h3>
+        <button id="modal-close" class="modal-close">&times;</button>
+      </div>
+      <form id="modal-form"></form>
+    </div>
+  </div>
+
+  <script src="admin.js"></script>
+</body>
+</html>

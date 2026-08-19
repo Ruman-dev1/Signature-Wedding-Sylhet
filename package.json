@@ -1,0 +1,16 @@
+{
+  "name": "signature-wedding-sylhet",
+  "version": "1.0.0",
+  "description": "Signature Wedding Sylhet - marketing website with admin panel",
+  "main": "server/server.js",
+  "scripts": {
+    "start": "node server/server.js"
+  },
+  "engines": {
+    "node": ">=22.5.0"
+  },
+  "dependencies": {
+    "express": "^5.2.1",
+    "multer": "^2.2.0"
+  }
+}
