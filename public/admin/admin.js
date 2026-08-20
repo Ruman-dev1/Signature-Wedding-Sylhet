@@ -481,6 +481,7 @@ function renderSettings() {
   }
   form.appendChild(settingsImageGroup('home_hero_image', 'Homepage Hero Background Image', s.home_hero_image));
   form.appendChild(settingsImageGroup('about_hero_image', 'About Page Hero Background Image', s.about_hero_image));
+  form.appendChild(settingsImageGroup('about_who_image', 'About Page "Who We Are" Image', s.about_who_image));
   const actions = document.createElement('div');
   actions.className = 'form-actions';
   const saveBtn = document.createElement('button');

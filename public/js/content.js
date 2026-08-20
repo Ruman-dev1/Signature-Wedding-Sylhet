@@ -8,7 +8,8 @@ const DEFAULT_DATA = {
     facebook: 'https://www.facebook.com/',
     youtube: 'https://www.youtube.com/',
     home_hero_image: 'https://images.unsplash.com/photo-1519741497674-611481863552?w=1920&q=80',
-    about_hero_image: 'https://images.unsplash.com/photo-1519225421980-715cb0215aed?w=1920&q=80'
+    about_hero_image: 'https://images.unsplash.com/photo-1519225421980-715cb0215aed?w=1920&q=80',
+    about_who_image: 'https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=800&q=80'
   },
   packages: [
     { name: 'Basic', price: '৳25,000', description: 'A complete photography coverage for an intimate wedding day.', featured: false, features: ['6 hours photography coverage', '1 photographer', '300+ edited photos', 'Online gallery delivery', '2 months delivery'] },
@@ -71,6 +72,11 @@ function applySettings(settings) {
   var aboutHero = document.querySelector('#about-hero');
   if (aboutHero && settings.about_hero_image) {
     aboutHero.style.backgroundImage = "url('" + settings.about_hero_image + "')";
+  }
+
+  var aboutWhoImg = document.querySelector('#about-who-img');
+  if (aboutWhoImg && settings.about_who_image) {
+    aboutWhoImg.src = settings.about_who_image;
   }
 
   var float = document.querySelector('.whatsapp-float');
