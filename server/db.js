@@ -62,7 +62,7 @@ function deleteItem(section, id) {
 
 function getSettings() {
   const row = db.prepare('SELECT data FROM settings WHERE id = 1').get();
-  return row ? JSON.parse(row.data) : SEED.settings;
+  return Object.assign({}, SEED.settings, row ? JSON.parse(row.data) : {});
 }
 
 function saveSettings(data) {

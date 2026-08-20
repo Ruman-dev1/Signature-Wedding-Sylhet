@@ -80,7 +80,7 @@ app.get('/api/admin/data', requireAuth, (req, res) => {
 });
 
 app.put('/api/admin/settings', requireAuth, (req, res) => {
-  const allowed = ['whatsapp_number', 'email', 'hours', 'location', 'instagram', 'facebook', 'youtube'];
+  const allowed = ['whatsapp_number', 'email', 'hours', 'location', 'instagram', 'facebook', 'youtube', 'home_hero_image'];
   const current = getSettings();
   for (const key of allowed) {
     if (req.body && req.body[key] !== undefined) current[key] = String(req.body[key]);

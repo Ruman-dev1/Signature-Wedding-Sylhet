@@ -6,7 +6,8 @@ const DEFAULT_DATA = {
     location: 'Sylhet, Bangladesh',
     instagram: 'https://www.instagram.com/',
     facebook: 'https://www.facebook.com/',
-    youtube: 'https://www.youtube.com/'
+    youtube: 'https://www.youtube.com/',
+    home_hero_image: 'https://images.unsplash.com/photo-1519741497674-611481863552?w=1920&q=80'
   },
   packages: [
     { name: 'Basic', price: '৳25,000', description: 'A complete photography coverage for an intimate wedding day.', featured: false, features: ['6 hours photography coverage', '1 photographer', '300+ edited photos', 'Online gallery delivery', '2 months delivery'] },
@@ -60,6 +61,11 @@ function loadData() {
 
 function applySettings(settings) {
   WHATSAPP_NUMBER = settings.whatsapp_number || WHATSAPP_NUMBER;
+
+  var hero = document.querySelector('#home-hero');
+  if (hero && settings.home_hero_image) {
+    hero.style.backgroundImage = "url('" + settings.home_hero_image + "')";
+  }
 
   var float = document.querySelector('.whatsapp-float');
   if (float) float.href = waLink('Hello Signature Wedding, I\'d like to inquire about your services.');

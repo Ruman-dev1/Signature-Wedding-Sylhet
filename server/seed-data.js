@@ -6,7 +6,8 @@ const SEED = {
     location: 'Sylhet, Bangladesh',
     instagram: 'https://www.instagram.com/',
     facebook: 'https://www.facebook.com/',
-    youtube: 'https://www.youtube.com/'
+    youtube: 'https://www.youtube.com/',
+    home_hero_image: 'https://images.unsplash.com/photo-1519741497674-611481863552?w=1920&q=80'
   },
   packages: [
     {

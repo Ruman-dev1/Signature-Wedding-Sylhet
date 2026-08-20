@@ -395,6 +395,64 @@ function confirmDelete(section, item) {
     .catch((err) => notice(err.message, 'error'));
 }
 
+function settingsImageGroup(key, label, value) {
+  const group = document.createElement('div');
+  group.className = 'form-group';
+
+  const l = document.createElement('label');
+  l.textContent = label;
+  group.appendChild(l);
+
+  const urlInput = document.createElement('input');
+  urlInput.type = 'text';
+  urlInput.name = key;
+  urlInput.value = value || '';
+  urlInput.placeholder = 'Image URL or upload';
+  group.appendChild(urlInput);
+
+  const uploadBtn = document.createElement('button');
+  uploadBtn.type = 'button';
+  uploadBtn.className = 'btn btn-outline btn-sm';
+  uploadBtn.textContent = 'Upload';
+  uploadBtn.style.marginTop = '.5rem';
+  group.appendChild(uploadBtn);
+
+  const fileInput = document.createElement('input');
+  fileInput.type = 'file';
+  fileInput.accept = 'image/*';
+  fileInput.hidden = true;
+  group.appendChild(fileInput);
+
+  const preview = document.createElement('img');
+  preview.className = 'image-preview';
+  preview.hidden = !value;
+  if (value) preview.src = value;
+  group.appendChild(preview);
+
+  fileInput.addEventListener('change', () => {
+    if (!fileInput.files.length) return;
+    const fd = new FormData();
+    fd.append('file', fileInput.files[0]);
+    uploadBtn.disabled = true;
+    uploadBtn.textContent = 'Uploading...';
+    api('/api/admin/upload', { method: 'POST', body: fd }).then((res) => {
+      urlInput.value = res.url;
+      preview.src = res.url;
+      preview.hidden = false;
+      uploadBtn.textContent = 'Upload';
+      uploadBtn.disabled = false;
+    }).catch((err) => {
+      notice(err.message, 'error');
+      uploadBtn.textContent = 'Upload';
+      uploadBtn.disabled = false;
+    });
+  });
+
+  uploadBtn.addEventListener('click', () => fileInput.click());
+
+  return group;
+}
+
 function renderSettings() {
   const wrap = $('settings-view');
   const s = state.data.settings || {};
@@ -421,6 +479,7 @@ function renderSettings() {
     group.appendChild(input);
     form.appendChild(group);
   }
+  form.appendChild(settingsImageGroup('home_hero_image', 'Homepage Hero Background Image', s.home_hero_image));
   const actions = document.createElement('div');
   actions.className = 'form-actions';
   const saveBtn = document.createElement('button');

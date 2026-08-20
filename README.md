@@ -38,7 +38,7 @@ From the admin dashboard you can:
 - **Testimonials** — add/edit client quotes.
 - **Stories** — manage blog-style client stories.
 - **Team** — manage team member profiles.
-- **Site Settings** — WhatsApp number, email, hours, location, and social links.
+- **Site Settings** — WhatsApp number, email, hours, location, social links, and the homepage hero background image.
 - **Change Password** — update the admin password.
 
 Changes appear on the public site immediately.
