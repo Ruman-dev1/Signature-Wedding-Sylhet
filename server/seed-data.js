@@ -7,7 +7,8 @@ const SEED = {
     instagram: 'https://www.instagram.com/',
     facebook: 'https://www.facebook.com/',
     youtube: 'https://www.youtube.com/',
-    home_hero_image: 'https://images.unsplash.com/photo-1519741497674-611481863552?w=1920&q=80'
+    home_hero_image: 'https://images.unsplash.com/photo-1519741497674-611481863552?w=1920&q=80',
+    about_hero_image: 'https://images.unsplash.com/photo-1519225421980-715cb0215aed?w=1920&q=80'
   },
   packages: [
     {
